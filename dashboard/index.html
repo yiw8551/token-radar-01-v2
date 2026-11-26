@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by fitted implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="dot"></span><div><h1>TOKEN RADAR</h1><p>Every pre-token protocol, ranked by what its token would be worth</p></div></div>
+  <div class="meta" id="meta"></div>
+</header>
+<section class="kpis" id="kpis" aria-label="Headline figures"></section>
+<nav class="tabs" id="tabs" aria-label="Views">
+  <button data-tab="launch" class="on">Pre-token launches</button>
+  <button data-tab="all">All 758 protocols</button>
+  <button data-tab="live">Live tokens</button>
+  <button data-tab="model">Model &amp; fit</button>
+</nav>
+<section class="controls" id="controls">
+  <input id="q" type="search" placeholder="Search name, slug or category…" aria-label="Search">
+  <select id="cat" aria-label="Category"><option value="">All categories</option></select>
+  <select id="sort" aria-label="Sort">
+    <option value="value">Sort: implied value ↓</option>
+    <option value="tvl">Sort: TVL ↓</option>
+    <option value="growth">Sort: 7-day growth ↓</option>
+    <option value="age">Sort: youngest first</option>
+    <option value="odds">Sort: launch odds ↓</option>
+  </select>
+  <span class="count" id="count"></span>
+</section>
+<main>
+  <table id="board" aria-label="Ranked board">
+    <thead><tr>
+      <th data-k="rank">#</th><th data-k="name">Protocol</th><th data-k="category">Category</th>
+      <th data-k="chains">Chains</th><th data-k="tvl" class="num">TVL</th><th data-k="growth" class="num">7d</th>
+      <th data-k="age" class="num">Age</th><th data-k="value" class="num">Implied value</th>
+      <th class="num">50% range</th><th data-k="odds" class="num">Launch odds</th><th>Status</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <p class="hint" id="hint"></p>
+</main>
+<section class="detail" id="detail" aria-label="Protocol detail"></section>
+<section class="modeltab" id="modeltab" hidden></section>
+<footer class="foot" id="foot"></footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
